@@ -7,7 +7,7 @@
 	class Biodata_model extends CI_Model
 	{
 		
-		function __construct(argument)
+		public function __construct()
 		{
 			# code...
 			parent::__construct();
@@ -55,18 +55,18 @@
 			$tglFix = $tglLahirExplode[2]."-".$tglLahirExplode[1]."-".$tglLahirExplode[0];
 
 			$object = array(
-				'nimMhs' => $this->input->post('nim'), 
-				'namaMhs' => $this->input->post('nama'), 
+				'nimMhs' => $this->input->post('nimMhs'), 
+				'namaMhs' => $this->input->post('namaMhs'), 
 				'tglLahirMhs' => $tglFix,
-				'kotaLahirMhs' => $this->input->post('kotaLahir'),
+				'kotaLahirMhs' => $this->input->post('kotaLahirMhs'),
 				'NIKMhs' => $this->input->post('nikMhs'),
-				'agamaMhs' => $this->input->post('agama'),
-				'jkMhs' => $this->input->post('jk'),
-				'nohpMhs' => $this->input->post('noHp'),
-				'emailMhs' => $this->input->post('email')
+				'agamaMhs' => $this->input->post('agamaMhs'),
+				'jkMhs' => $this->input->post('jkMhs'),
+				'nohpMhs' => $this->input->post('nohpMhs'),
+				'emailMhs' => $this->input->post('emailMhs')
 				);
 			$this->db->where('nimMhs',$nimMhs);
-			$this->db->update('mahasiswa', $data);
+			$this->db->update('mahasiswa', $object);
 		}
 
 		public function deleteDataMahasiswa($nimMhs) 
@@ -103,7 +103,7 @@
 			return $query->result();
 		}
 
-		public function insertDataKeluarga
+		public function updateDataKeluarga($idKlg)
 		{
 			$object = array(
 				'namaAyah' => $this->input->post('namaAyah'), 
@@ -115,7 +115,7 @@
 			$this->db->update('keluarga', $object);
 		}
 
-		public function deleteDataSekolah($nimMhs) 
+		public function deleteDataKeluarga($idKlg) 
 		{ 
          	if ($this->db->delete("keluarga", "idKlg = ".$idKlg)) 
          	{ 
@@ -134,12 +134,12 @@
 		public function insertDataSekolah
 		{
 			$object = array(
-				'namaSkl' => $this->input->post('nama'), 
-				'jurusanSkl' => $this->input->post('jurusan'),
-				'nisnSkl' => $this->input->post('nisn'),
-				'nilaiUNSkl' => $this->input->post('nilai'),
-				'jmlhMPSkl' => $this->input->post('jumlahMP'),
-				'rtUNSkl' => $this->input->post('rt')
+				'namaSkl' => $this->input->post('namaSkl'), 
+				'jurusanSkl' => $this->input->post('jurusanSkl'),
+				'nisnSkl' => $this->input->post('nisnSkl'),
+				'nilaiUNSkl' => $this->input->post('nilaiUNSkl'),
+				'jmlhMPSkl' => $this->input->post('jmlhMPSkl'),
+				'rtUNSkl' => $this->input->post('rtUNSkl')
 				);
 			$this->db->insert('sekolah', $object);
 		}
@@ -150,21 +150,21 @@
 			return $query->result();
 		}
 
-		public function updateDataSekolah
+		public function updateDataSekolah($idSkl)
 		{
 			$object = array(
-				'namaSkl' => $this->input->post('nama'), 
-				'jurusanSkl' => $this->input->post('jurusan'),
-				'nisnSkl' => $this->input->post('nisn'),
-				'nilaiUNSkl' => $this->input->post('nilai'),
-				'jmlhMPSkl' => $this->input->post('jumlahMP'),
-				'rtUNSkl' => $this->input->post('rt')
+				'namaSkl' => $this->input->post('namaSkl'), 
+				'jurusanSkl' => $this->input->post('jurusanSkl'),
+				'nisnSkl' => $this->input->post('nisnSkl'),
+				'nilaiUNSkl' => $this->input->post('nilaiUNSkl'),
+				'jmlhMPSkl' => $this->input->post('jmlhMPSkl'),
+				'rtUNSkl' => $this->input->post('rtUNSkl')
 				);
 			$this->db->where('idSkl',$idSkl);
 			$this->db->update('sekolah', $object);
 		}
 
-		public function deleteDataSekolah($nimMhs) 
+		public function deleteDataSekolah($idSkl) 
 		{ 
          	if ($this->db->delete("sekolah", "idSkl = ".$idSkl)) 
          	{ 
@@ -184,14 +184,14 @@
 		public function insertDataDomisili
 		{
 			$object = array(
-				'alamatDms' => $this->input->post('alamt'), 
-				'rtDms' => $this->input->post('rt'),
-				'rwDms' => $this->input->post('rw'),
-				'kelDms' => $this->input->post('kel'),
-				'kecDms' => $this->input->post('kec'),
-				'kotaDms' => $this->input->post('kota'),
-				'provDms' => $this->input->post('prov'),
-				'kpDms' => $this->input->post('kodepos'),
+				'alamatDms' => $this->input->post('alamatDms'), 
+				'rtDms' => $this->input->post('rtDms'),
+				'rwDms' => $this->input->post('rwDms'),
+				'kelDms' => $this->input->post('kelDms'),
+				'kecDms' => $this->input->post('kecDms'),
+				'kotaDms' => $this->input->post('kotaDms'),
+				'provDms' => $this->input->post('provDms'),
+				'kpDms' => $this->input->post('kpDms'),
 				);
 			$this->db->insert('domisili', $object);
 		}
@@ -202,23 +202,23 @@
 			return $query->result();
 		}
 
-		public function insertDataDomisili
+		public function updateDataDomisili($idDms)
 		{
 			$object = array(
-				'alamatDms' => $this->input->post('alamt'), 
-				'rtDms' => $this->input->post('rt'),
-				'rwDms' => $this->input->post('rw'),
-				'kelDms' => $this->input->post('kel'),
-				'kecDms' => $this->input->post('kec'),
-				'kotaDms' => $this->input->post('kota'),
-				'provDms' => $this->input->post('prov'),
-				'kpDms' => $this->input->post('kodepos'),
+				'alamatDms' => $this->input->post('alamatDms'), 
+				'rtDms' => $this->input->post('rtDms'),
+				'rwDms' => $this->input->post('rwDms'),
+				'kelDms' => $this->input->post('kelDms'),
+				'kecDms' => $this->input->post('kecDms'),
+				'kotaDms' => $this->input->post('kotaDms'),
+				'provDms' => $this->input->post('provDms'),
+				'kpDms' => $this->input->post('kpDms'),
 				);
 			$this->db->where('idDms', $idDms);
 			$this->db->update('domisili', $object);
 		}
 
-		public function deleteDataSekolah($nimMhs) 
+		public function deleteDataDomisili($idDms) 
 		{ 
          	if ($this->db->delete("domisili", "idDms = ".$idDms)) 
          	{ 
