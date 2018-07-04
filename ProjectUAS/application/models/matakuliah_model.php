@@ -25,7 +25,8 @@
 				'namaMK' => $this->input->post('namaMK'), 
 				'sksMK' => $this->input->post('sksMK'),
 				'jamMK' => $this->input->post('jamMK'),
-				'nilaiMK' => $this->input->post('nilaiMK')
+				'nilaiMK' => $this->input->post('nilaiMK'),
+				'smsMK' => $this->input->post('smsMK')
 				);
 			$this->db->insert('matakuliah', $object);
 		}
@@ -42,7 +43,8 @@
 				'namaMK' => $this->input->post('namaMK'), 
 				'sksMK' => $this->input->post('sksMK'),
 				'jamMK' => $this->input->post('jamMK'),
-				'nilaiMK' => $this->input->post('nilaiMK')
+				'nilaiMK' => $this->input->post('nilaiMK'),
+				'smsMK' => $this->input->post('smsMK')
 				);
 			$this->db->where('idMK', $idMK);
 			$this->db->update('matakuliah', $object);
