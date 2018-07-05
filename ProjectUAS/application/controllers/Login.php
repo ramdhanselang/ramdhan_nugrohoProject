@@ -6,8 +6,8 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$this->load->library('form_validation');
-		$this->$this->form_validation->set_rules('UsernameUser', 'Username', 'trim|required|');
-		$this->$this->form_validation->set_rules('PasswordUser', 'Password', 'trim|required|');
+		$this->form_validation->set_rules('UsernameUser', 'Username');
+		$this->form_validation->set_rules('PasswordUser', 'Password');
 		if($this->form_validation->run() == FALSE){
 			$this->load->view('login');
 		}else{
