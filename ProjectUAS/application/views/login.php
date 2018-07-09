@@ -8,7 +8,7 @@
         <main role="main" class="container">
       <div class="jumbotron">
         <center><h1><font color="white">SIAKAD</font> <font color="#00cccc"x>PROJECT</font></b></center><br>
-          <?php echo validation_errors()?>
+         <font color="white"><?php echo validation_errors()?></font> 
             <div class="form-group">
             <input type="text" class="form-control" id="username" name="username" placeholder="username">
             </div>
