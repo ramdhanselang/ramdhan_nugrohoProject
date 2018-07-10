@@ -12,9 +12,9 @@ class Login extends CI_Controller {
 			$this->load->view('login');
 		}else{
 			if($this->session->userdata('logged_in')['levelUser'] ==  'admin'){
-				redirect('Home/Admin','refresh');
+				redirect('Admin_Home','refresh');
 			}else{
-				redirect('Home','refresh');
+				redirect('User_Home','refresh');
 			}
 		}
 	

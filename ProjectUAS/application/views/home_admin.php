@@ -40,7 +40,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="<?php echo base_url('index.php/mahasiswa') ?>">Biodata Mahasiswa</a>
+              <a href="<?php echo base_url('index.php/Admin_bioMhs') ?>">Biodata Mahasiswa</a>
             </li>
             <li>
               <a href="cards.html">Nilai Mahasiswa</a>
@@ -74,27 +74,6 @@
       </ol>
       </div>
       <center><h1>SELAMAT DATANG ADMIN</h1></center>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <table class="table table-hover">
-        <thead>
-          <th><center>NIM</center></th>
-          <th><center>NAMA</center></th>
-          <th><center>OPTIONAL</center></th>
-        </thead>
-        <tbody>
-          <?php foreach ($biodata_list as $key => $value): ?>
-            <tr>
-              <td><center><?php echo $value['nimMhs']?></center></td>
-              <td><center><?php echo $value['namaMahasiswa'] ?></center></td>
-              <td><center>
-                <a href="<?php echo base_url("index.php/mahasiswa/mahasiswaByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Detail Biodata</a>
-                </center>
-              </td>
-            </tr>
-          <?php endforeach ?>
-        </tbody>
-      </table>
-      </div>
       </div>
       <!-- Icon Cards-->
     <!-- Bootstrap core JavaScript-->

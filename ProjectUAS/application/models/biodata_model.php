@@ -18,19 +18,26 @@
 		*/
 		public function getDataMahasiswa()
 		{
-			$query = $this->db->query("select nimMhs, namaMahasiswa from mahasiswa");
+			$query = $this->db->query("select nimMhs, namaMhs from mahasiswa");
 			return $query->result_array();
 		}
 
+		public function insertMahasiswa()
+		{
+			$object = array(
+				'nimMhs' => $this->input->post('nimMhs'), 
+				'namaMhs' => $this->input->post('namaMhs')
+				);
+			$this->db->insert('mahasiswa', $object);
+		}
+		
 		public function insertDataMahasiswa()
 		{
 			$tglLahirRow = $this->input->post('tglLahir');
 			$tglLahirExplode = explode("-", $tglLahirRow);
 			$tglFix = $tglLahirExplode[2]."-".$tglLahirExplode[1]."-".$tglLahirExplode[0];
 
-			$object = array(
-				'nimMhs' => $this->input->post('nimMhs'), 
-				'namaMhs' => $this->input->post('namaMhs'), 
+			$object = array( 
 				'tglLahirMhs' => $tglFix,
 				'kotaLahirMhs' => $this->input->post('kotaLahirMhs'),
 				'NIKMhs' => $this->input->post('nikMhs'),
@@ -44,7 +51,7 @@
 
 		public function getMahasiswa($nimMhs) {
 			$this->db->where('nimMhs',$nimMhs);
-			$query = $this->db->get('mahasiswa');
+			$query = $this->db->query("select tglLahirMhs, kotaLahirMhs, NIKMhs, agamaMhs, jkMhs, nohpMhs, emailMhs  from mahasiswa");
 			return $query->result();
 		}
 

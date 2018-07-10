@@ -40,7 +40,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="<?php echo base_url('index.php/mahasiswa') ?>">Biodata Mahasiswa</a>
+              <a href="<?php echo base_url('') ?>">Biodata Mahasiswa</a>
             </li>
             <li>
               <a href="cards.html">Nilai Mahasiswa</a>
@@ -73,28 +73,29 @@
         <li class="breadcrumb-item active">My Dashboard</li>
       </ol>
       </div>
-      <center><h1>DAFTAR MAHASISWA</h1></center>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <center><h1>DAFTAR MAHASISWA</h1></center><br>
+      <center>
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
       <table class="table table-hover">
         <thead>
-          <th><center>NIM</center></th>
-          <th><center>NAMA</center></th>
-          <th><center>OPTIONAL</center></th>
+          <th>NIM</th>
+          <th>NAMA</th>
+          <th>OPTIONAL</th>
         </thead>
         <tbody>
           <?php foreach ($biodata_list as $key => $value): ?>
             <tr>
-              <td><center><?php echo $value['nimMhs'] ?></center></td>
-              <td><center><?php echo $value['namaMahasiswa'] ?></center></td>
-              <td><center>
-                <a href="<?php echo base_url("index.php/mahasiswa/mahasiswaByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Detail Biodata</a>
-                </center>
+              <td><?php echo $value['nimMhs'] ?></td>
+              <td><?php echo $value['namaMahasiswa'] ?></td>
+              <td>
+                <a href="<?php echo base_url("index.php/Admin_bioMhs/bio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Detail Biodata</a>
               </td>
             </tr>
           <?php endforeach ?>
         </tbody>
       </table>
       </div>
+      </center>
       </div>
       <!-- Icon Cards-->
     <!-- Bootstrap core JavaScript-->
