@@ -5,7 +5,9 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('home');
+		$this->load->model('biodata_model');
+		$data["biodata_list"] = $this->biodata_model->getDataMahasiswa();
+		$this->load->view('home',$data);
 	}
 
 }

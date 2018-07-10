@@ -73,7 +73,7 @@
         <li class="breadcrumb-item active">My Dashboard</li>
       </ol>
       </div>
-      <center><h1>SELAMAT DATANG ADMIN</h1></center>
+      <center><h1>DAFTAR MAHASISWA</h1></center>
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <table class="table table-hover">
         <thead>
@@ -84,7 +84,7 @@
         <tbody>
           <?php foreach ($biodata_list as $key => $value): ?>
             <tr>
-              <td><center><?php echo $value['nimMhs']?></center></td>
+              <td><center><?php echo $value['nimMhs'] ?></center></td>
               <td><center><?php echo $value['namaMahasiswa'] ?></center></td>
               <td><center>
                 <a href="<?php echo base_url("index.php/mahasiswa/mahasiswaByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Detail Biodata</a>
