@@ -28,7 +28,7 @@
         {
             $data = array(
                 'usernameUser' => $this->input->post('usernameUser'),
-                'passwordUser' => md5($this->input->post('passwordUser')).
+                'passwordUser' => md5($this->input->post('passwordUser')),
                 'levelUser' => $this->input->post('levelUser')
             );
             $this->db->insert('user',$data);

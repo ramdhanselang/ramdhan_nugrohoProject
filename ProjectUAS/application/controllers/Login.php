@@ -6,12 +6,12 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('UsernameUser', 'Username');
-		$this->form_validation->set_rules('PasswordUser', 'Password');
+		$this->form_validation->set_rules('usernameUser', 'usernameUser','trim|required|callback_cekDb');
+		$this->form_validation->set_rules('passwordUser', 'passwordUser','trim|required');
 		if($this->form_validation->run() == FALSE){
 			$this->load->view('login');
 		}else{
-			if($this->$this->session->userdata('logged_in')['levelUser'] ==  'admin'){
+			if($this->session->userdata('logged_in')['levelUser'] ==  'admin'){
 				redirect('Home/Admin','refresh');
 			}else{
 				redirect('Home','refresh');
@@ -33,13 +33,13 @@ class Login extends CI_Controller {
             # code...
             $this->load->model('user_model');
             $username = $this->input->post('usernameUser'); 
-            $result = $this->user->login($username,$password);
+            $result = $this->user_model->login($username,$password);
             if($result){
                 $session_array = array();
-                foreach ($result as $key) {
+                foreach ($result as $row) {
                     $session_array = array(
-                        'idUser'=>$key->idUser,
-                        'usernameUser'=>$key->usernameUser,
+                        'idUser'=>$row->idUser,
+                        'usernameUser'=>$row->usernameUser,
                         'levelUser' => $row->levelUser
                     );
                     $this->session->set_userdata('logged_in',$session_array);
