@@ -16,28 +16,28 @@
 		/*
 		Data Mahasiswa
 		*/
-		public function getDataMahasiswa
+		public function getDataMahasiswa()
 		{
-			$query = $this->db->get("mahasiswa");
+			$query = $this->db->query("select nimMhs, namaMahasiswa from mahasiswa");
 			return $query->result_array();
 		}
 
-		public function insertDataMahasiswa
+		public function insertDataMahasiswa()
 		{
 			$tglLahirRow = $this->input->post('tglLahir');
 			$tglLahirExplode = explode("-", $tglLahirRow);
 			$tglFix = $tglLahirExplode[2]."-".$tglLahirExplode[1]."-".$tglLahirExplode[0];
 
 			$object = array(
-				'nimMhs' => $this->input->post('nim'), 
-				'namaMhs' => $this->input->post('nama'), 
+				'nimMhs' => $this->input->post('nimMhs'), 
+				'namaMhs' => $this->input->post('namaMhs'), 
 				'tglLahirMhs' => $tglFix,
-				'kotaLahirMhs' => $this->input->post('kotaLahir'),
+				'kotaLahirMhs' => $this->input->post('kotaLahirMhs'),
 				'NIKMhs' => $this->input->post('nikMhs'),
-				'agamaMhs' => $this->input->post('agama'),
-				'jkMhs' => $this->input->post('jk'),
-				'nohpMhs' => $this->input->post('noHp'),
-				'emailMhs' => $this->input->post('email')
+				'agamaMhs' => $this->input->post('agamaMhs'),
+				'jkMhs' => $this->input->post('jkMhs'),
+				'nohpMhs' => $this->input->post('noHpMhs'),
+				'emailMhs' => $this->input->post('emailMhs')
 				);
 			$this->db->insert('mahasiswa', $object);
 		}
@@ -80,13 +80,13 @@
       	/*
 		Data Keluarga
 		*/
-		public function getDataKeluarga
+		public function getDataKeluarga()
 		{
 			$query = $this->db->get("keluarga");
 			return $query->result_array();
 		}
 
-		public function insertDataKeluarga
+		public function insertDataKeluarga()
 		{
 			$object = array(
 				'namaAyah' => $this->input->post('namaAyah'), 
@@ -125,13 +125,13 @@
 		/*
 		Data Sekolah
 		*/
-		public function getDataSekolah
+		public function getDataSekolah()
 		{
 			$query = $this->db->get("sekolah");
 			return $query->result_array();
 		}
 
-		public function insertDataSekolah
+		public function insertDataSekolah()
 		{
 			$object = array(
 				'namaSkl' => $this->input->post('namaSkl'), 
@@ -175,13 +175,13 @@
 		/*
 		Data Domisili
 		*/
-		public function getDataDomisili
+		public function getDataDomisili()
 		{
 			$query = $this->db->get("domisili");
 			return $query->result_array();
 		}
 
-		public function insertDataDomisili
+		public function insertDataDomisili()
 		{
 			$object = array(
 				'alamatDms' => $this->input->post('alamatDms'), 
