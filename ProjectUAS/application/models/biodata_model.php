@@ -50,8 +50,7 @@
 		}
 
 		public function getMahasiswa($nimMhs) {
-			$this->db->where('nimMhs',$nimMhs);
-			$query = $this->db->query("select tglLahirMhs, kotaLahirMhs, NIKMhs, agamaMhs, jkMhs, nohpMhs, emailMhs  from mahasiswa");
+			$query = $this->db->query("select tglLahirMhs, kotaLahirMhs, NIKMhs, agamaMhs, jkMhs, nohpMhs, emailMhs  from mahasiswa where nimMhs = '$nimMhs'");
 			return $query->result();
 		}
 
