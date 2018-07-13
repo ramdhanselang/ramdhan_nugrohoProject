@@ -75,7 +75,7 @@
       </div>
       <center><h1>DAFTAR MAHASISWA</h1></center><br>
       <center>
-        <a href="<?php echo base_url('index.php/Admin_bioMhs/create') ?>" class="btn btn-primary my-3">Tambah</a>
+        <a href="<?php echo base_url('index.php/Admin_Mhs/create') ?>" class="btn btn-primary my-3">Insert Mahasiswa</a>
       <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
       <table class="table table-hover">
         <thead>
@@ -84,15 +84,14 @@
           <th><center>OPTIONAL</center></th>
         </thead>
         <tbody>
-          <?php foreach ($biodata_list as $key => $value): ?>
+          <?php foreach ($mahasiswa_list as $key => $value): ?>
             <tr>
               <td><?php echo $value['nimMhs'] ?></td>
               <td><?php echo $value['namaMhs'] ?></td>
               <td><center>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/bio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Diri</a>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/aslsk_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Sekolah</a>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/klg_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Keluarga</a>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/dms_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Domisili</a>
+                <a href="<?php echo base_url("index.php/Admin_bioMhs/bio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Insert</a>
+                <a href="<?php echo base_url("index.php/Admin_bioMhs/bio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-success">Update</a>
+                <a href="<?php echo base_url("index.php/Admin_bioMhs/dms_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-danger">Read</a>
               </center>
               </td>
             </tr>
