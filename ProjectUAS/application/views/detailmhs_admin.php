@@ -83,13 +83,15 @@
           <th>OPTIONAL</th>
         </thead>
         <tbody>
+          <?php foreach ($mahasiswa as $key => $value): ?>
             <tr>
-              <td><?php echo $mahasiswa[0]->nimMhs ?></td>
-              <td><?php echo $mahasiswa[0]->namaMhs ?></td>
+              <td><?php echo $value['nimMhs'] ?></td>
+              <td><?php echo $value['namaMhs'] ?></td>
               <td>
                 <a href="<?php echo base_url("index.php/Admin_bioMhs/bio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Detail Biodata</a>
               </td>
             </tr>
+          <?php endforeach ?>
         </tbody>
       </table>
       </div>

@@ -89,10 +89,10 @@
               <td><?php echo $value['nimMhs'] ?></td>
               <td><?php echo $value['namaMhs'] ?></td>
               <td><center>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/bio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Diri</a>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/aslsk_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Sekolah</a>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/klg_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Keluarga</a>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/dms_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Domisili</a>
+                <a href="<?php echo base_url("index.php/Admin_bioMhs/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Diri</a>
+                <a href="<?php echo base_url("index.php/Admin_bioMhs/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Sekolah</a>
+                <a href="<?php echo base_url("index.php/Admin_bioMhs/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Keluarga</a>
+                <a href="<?php echo base_url("index.php/Admin_bioMhs/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Domisili</a>
               </center>
               </td>
             </tr>

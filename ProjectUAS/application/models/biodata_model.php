@@ -14,7 +14,7 @@
 		}
 
 		/*
-		Data Mahasiswa
+ 		Data Mahasiswa
 		*/
 		public function getDataMahasiswa()
 		{
@@ -51,7 +51,7 @@
 
 		public function getMahasiswa($nimMhs) {
 			$query = $this->db->query("select tglLahirMhs, kotaLahirMhs, NIKMhs, agamaMhs, jkMhs, nohpMhs, emailMhs  from mahasiswa where nimMhs = '$nimMhs'");
-			return $query->result();
+			return $query->result_array();
 		}
 
 		public function updateDataMahasiswa($nimMhs)
