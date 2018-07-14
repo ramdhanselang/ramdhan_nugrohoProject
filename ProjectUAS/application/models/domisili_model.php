@@ -18,7 +18,7 @@
 			return $query->result_array();
 		}
 
-		public function insertDataDomisili()
+		public function insertDataDomisili($idDms)
 		{
 			$object = array(
 				'alamatDms' => $this->input->post('alamatDms'), 
@@ -30,6 +30,7 @@
 				'provDms' => $this->input->post('provDms'),
 				'kpDms' => $this->input->post('kpDms'),
 				);
+			$this->db->where('idDms',$idDms);
 			$this->db->insert('domisili', $object);
 		}
 

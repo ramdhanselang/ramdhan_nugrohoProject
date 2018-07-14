@@ -18,7 +18,7 @@
 			return $query->result_array();
 		}
 
-		public function insertDataSekolah()
+		public function insertDataSekolah($idSkl)
 		{
 			$object = array(
 				'namaSkl' => $this->input->post('namaSkl'), 
@@ -28,6 +28,7 @@
 				'jmlhMPSkl' => $this->input->post('jmlhMPSkl'),
 				'rtUNSkl' => $this->input->post('rtUNSkl')
 				);
+			$this->db->where('idSkl',$idSkl);
 			$this->db->insert('sekolah', $object);
 		}
 

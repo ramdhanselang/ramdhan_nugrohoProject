@@ -18,7 +18,7 @@
 			return $query->result_array();
 		}
 
-		public function insertDataKeluarga()
+		public function insertDataKeluarga($idKlg)
 		{
 			$object = array(
 				'namaAyah' => $this->input->post('namaAyah'), 
@@ -26,6 +26,7 @@
 				'namaIbu' => $this->input->post('namaIbu'),
 				'nikIbu' => $this->input->post('nikIbu')
 				);
+			$this->db->where('idKlg',$idKlg);
 			$this->db->insert('keluarga', $object);
 		}
 
