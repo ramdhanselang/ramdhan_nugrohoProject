@@ -40,7 +40,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="<?php echo base_url('index.php/Admin_bioMhs') ?>">Biodata Mahasiswa</a>
+              <a href="<?php echo base_url('index.php/Admin_Mhs') ?>">Biodata Mahasiswa</a>
             </li>
             <li>
               <a href="cards.html">Nilai Mahasiswa</a>
