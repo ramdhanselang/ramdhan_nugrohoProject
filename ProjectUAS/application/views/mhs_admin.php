@@ -66,7 +66,7 @@
   <div class="content-wrapper">
     <div class="container-fluid">
       <!-- Breadcrumbs-->
-      <ol class="breadcrumb">
+      <ol class=  "breadcrumb">
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
@@ -89,16 +89,10 @@
               <td><?php echo $value['nimMhs'] ?></td>
               <td><?php echo $value['namaMhs'] ?></td>
               <td><center>
-<<<<<<< HEAD
                 <a href="<?php echo base_url("index.php/Admin_bioMhs/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Diri</a>
                 <a href="<?php echo base_url("index.php/Admin_bioMhs/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Sekolah</a>
                 <a href="<?php echo base_url("index.php/Admin_bioMhs/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Keluarga</a>
                 <a href="<?php echo base_url("index.php/Admin_bioMhs/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Data Domisili</a>
-=======
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/bio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Insert</a>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/bio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-success">Update</a>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/dms_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-danger">Read</a>
->>>>>>> 2f3d4e1d12a5e61584a4ddce54d2efa940b331c6
               </center>
               </td>
             </tr>
