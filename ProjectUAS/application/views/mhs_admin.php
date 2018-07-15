@@ -75,8 +75,8 @@
       </div>
       <center><h1>DAFTAR MAHASISWA</h1></center><br>
       <center>
-        <a href="<?php echo base_url('index.php/Admin_Mhs/create') ?>" class="btn btn-primary my-3">Insert Mahasiswa</a>
       <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+        <a href="<?php echo base_url('index.php/Admin_Mhs/create') ?>" class="btn btn-primary my-3">Insert Mahasiswa</a>
       <table class="table table-hover">
         <thead>
           <th><center>NIM</center></th>

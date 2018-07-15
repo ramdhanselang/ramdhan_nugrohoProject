@@ -23,7 +23,7 @@
 			return $query->result_array();
 		}
 
-		public function insertDataBiodata($idBio)
+		public function insertDataBiodata()
 		{
 			$tglLahirRow = $this->input->post('tglLahir');
 			$tglLahirExplode = explode("-", $tglLahirRow);
@@ -36,9 +36,9 @@
 				'agamaMhs' => $this->input->post('agamaMhs'),
 				'jkMhs' => $this->input->post('jkMhs'),
 				'nohpMhs' => $this->input->post('noHpMhs'),
-				'emailMhs' => $this->input->post('emailMhs')
+				'emailMhs' => $this->input->post('emailMhs'),
+				'fkNimMhs' => $this->input->post('fkNimMhs')
 				);
-			$this->db->where('idBio',$idBio);
 			$this->db->insert('biodata', $object);
 		}
 
@@ -49,7 +49,7 @@
 			return $query->result_array();
 		}
 
-		public function updateDataBiodataByID($idBio)
+		public function updateDataBiodata($idBio)
 		{
 			$tglLahirRow = $this->input->post('tglLahir');
 			$tglLahirExplode = explode("-", $tglLahirRow);

@@ -75,6 +75,7 @@
       </div>
       <center><h1>SELAMAT DATANG ADMIN</h1></center>
       </div>
+
       <!-- Icon Cards-->
     <!-- Bootstrap core JavaScript-->
     <script src="<?php echo base_url() ?>/assets/vendor/jquery/jquery.min.js"></script>

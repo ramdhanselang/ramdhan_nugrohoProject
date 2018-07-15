@@ -18,15 +18,15 @@
 			return $query->result_array();
 		}
 
-		public function insertDataKeluarga($idKlg)
+		public function insertDataKeluarga()
 		{
 			$object = array(
 				'namaAyah' => $this->input->post('namaAyah'), 
 				'nikAyah' => $this->input->post('nikAyah'),
 				'namaIbu' => $this->input->post('namaIbu'),
-				'nikIbu' => $this->input->post('nikIbu')
+				'nikIbu' => $this->input->post('nikIbu'),
+				'fkNimMhs' => $this->input->post('fkNimMhs')
 				);
-			$this->db->where('idKlg',$idKlg);
 			$this->db->insert('keluarga', $object);
 		}
 

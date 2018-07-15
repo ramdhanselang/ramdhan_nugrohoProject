@@ -18,7 +18,7 @@
 			return $query->result_array();
 		}
 
-		public function insertDataSekolah($idSkl)
+		public function insertDataSekolah()
 		{
 			$object = array(
 				'namaSkl' => $this->input->post('namaSkl'), 
@@ -26,9 +26,9 @@
 				'nisnSkl' => $this->input->post('nisnSkl'),
 				'nilaiUNSkl' => $this->input->post('nilaiUNSkl'),
 				'jmlhMPSkl' => $this->input->post('jmlhMPSkl'),
-				'rtUNSkl' => $this->input->post('rtUNSkl')
+				'rtUNSkl' => $this->input->post('rtUNSkl'),
+				'fkNimMhs' => $this->input->post('fkNimMhs')
 				);
-			$this->db->where('idSkl',$idSkl);
 			$this->db->insert('sekolah', $object);
 		}
 
