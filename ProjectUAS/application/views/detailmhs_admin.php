@@ -77,25 +77,18 @@
       <center>
       <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
       <table class="table table-hover">
-        <thead>
-          <th>NIM</th>
-          <th>NAMA</th>
-          <th>OPTIONAL</th>
-        </thead>
-        <tbody>
-          <?php foreach ($mahasiswa as $key => $value): ?>
             <tr>
-              <td><?php echo $value['nimMhs'] ?></td>
-              <td><?php echo $value['namaMhs'] ?></td>
-              <td>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/bio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Detail Biodata</a>
-              </td>
+              <td><?php echo $mahasiswa[0]->nimMhs ?></td>
+              <td><?php echo $mahasiswa[0]->namaMhs?></td>
             </tr>
-          <?php endforeach ?>
-        </tbody>
       </table>
       </div>
       </center>
+        <table>
+        <tr>
+          <td><input type="date" name=""></td>
+        </tr>
+      </table>
       </div>
       <!-- Icon Cards-->
     <!-- Bootstrap core JavaScript-->

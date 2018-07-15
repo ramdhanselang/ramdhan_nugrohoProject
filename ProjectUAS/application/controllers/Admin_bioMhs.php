@@ -13,8 +13,10 @@ class Admin_bioMhs extends CI_Controller {
 	public function createBio_MhsByNIM($nimMhs)
 	{
 		$data['nimMhs'] = $nimMhs;
+		$this->load->model('mahasiswa_model');
+		$data['mahasiswa'] = $this->mahasiswa_model->getMahasiswa($nimMhs);
 		$this->load->model('biodata_model');
-		$data['mahasiswa'] = $this->biodata_model->getDataBiodata();
+		$data["biodata_list"] = $this->biodata_model->getBiodata($nimMhs);
 		$this->load->view('detailmhs_admin',$data);
 	}
 

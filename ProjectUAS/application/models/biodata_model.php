@@ -18,7 +18,8 @@
 		*/
 		public function getDataBiodata()
 		{
-			$query = $this->db->get("biodata");			
+			$query = $this->db->get("biodata");
+			$query = $this->db->get("mahasiswa");
 			return $query->result_array();
 		}
 
