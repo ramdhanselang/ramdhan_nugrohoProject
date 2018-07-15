@@ -20,17 +20,6 @@ class Admin_Mhs extends CI_Controller {
 		$this->mahasiswa_model->insertMahasiswa();
 		$this->load->view('mhs_admin');
 	}
-
-	public function update($nimMhs)
-	{
-		$this->load->helper('url','form');
-		$this->load->library('form_validation');
-		$this->load->model('mahasiswa_model');
-		$this->form_validation->set_rules('nimMhs', 'NIM', 'trim|required');
-		$this->form_validation->set_rules('namaMhs', 'Nama', 'trim|required');
-		$this->mahasiswa_model->updateMahasiswaByNIM($nimMhs);
-		$this->load->view('mhs_admin');
-	}
 }
 
 /* End of file Admin_Mhs.php */
