@@ -122,20 +122,36 @@ class Admin_bioMhs extends CI_Controller {
 
 	}
 
-	public function read()
+	public function read($nimMhs)
 	{
 		# code...
 		$this->load->model('mahasiswa_model');
 		$data['mahasiswa'] = $this->mahasiswa_model->getMahasiswa($nimMhs);
 		$this->load->model('biodata_model');
 		$data["biodata_list"] = $this->biodata_model->getBiodata($nimMhs);
-		$this->load->model('biodata_model');
+		$this->load->model('sekolah_model');
 		$data["sekolah_list"] = $this->sekolah_model->getSekolah($nimMhs);
-		$this->load->model('biodata_model');
+		$this->load->model('keluarga_model');
 		$data["keluarga_list"] = $this->keluarga_model->getKeluarga($nimMhs);
-		$this->load->model('biodata_model');
+		$this->load->model('domisili_model');
 		$data["domisili_list"] = $this->domisili_model->getDomisili($nimMhs);
 		$this->load->view('detailmhs_admin',$data);
+	}
+
+	public function delete($nimMhs, $idBio, $idSkl, $idKlg, $idDms)
+	{
+		$this->load->helper('url');
+		$this->load->model('mahasiswa_model');
+		$this->mahasiswa_model->deleteMahasiswa($nimMhs);
+		$this->load->model('biodata_model');
+		$this->biodata_model->deleteDataBiodata($idBio);
+		$this->load->model('sekolah_model');
+		$this->sekolah_model->deleteDataSekolah($idSkl);
+		$this->load->model('keluarga_model');
+		$this->keluarga_model->deleteDataKeluarga($idKlg);
+		$this->load->model('domisili_model');
+		$this->domisili_model->deleteDataDomisili($idDms);
+		redirect('Admin_Mhs','refresh');
 	}
 }
 

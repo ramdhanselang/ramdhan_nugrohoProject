@@ -17,8 +17,13 @@ class Admin_Mhs extends CI_Controller {
 		$this->load->model('mahasiswa_model');
 		$this->form_validation->set_rules('nimMhs', 'NIM', 'trim|required');
 		$this->form_validation->set_rules('namaMhs', 'Nama', 'trim|required');
-		$this->mahasiswa_model->insertMahasiswa();
-		$this->load->view('mhs_admin');
+		if ($this->form_validation->run()==FALSE) {
+			# code...
+			$this->load->view('insertMhs_admin');
+		}else{
+			$this->mahasiswa_model->insertMahasiswa();
+			redirect('Admin_Mhs','refresh');
+		}
 	}
 }
 

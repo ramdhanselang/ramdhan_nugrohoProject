@@ -40,6 +40,14 @@
 		$this->db->where('nimMhs', $nimMhs);
 		$this->db->update('mahasiswa', $object);
 	}
+
+	public function deleteMahasiswa($nimMhs) 
+		{ 
+         	if ($this->db->delete("mahasiswa", "nimMhs = ".$nimMhs)) 
+         	{ 
+            return true; 
+        	} 
+      	}
 }
 
 /* End of file mahasiswa_model.php */
