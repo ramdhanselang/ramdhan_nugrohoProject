@@ -40,7 +40,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="<?php echo base_url('') ?>">Biodata Mahasiswa</a>
+              <a href="<?php echo base_url('index.php/Admin_Mhs') ?>">Biodata Mahasiswa</a>
             </li>
             <li>
               <a href="cards.html">Nilai Mahasiswa</a>
@@ -73,6 +73,7 @@
       <h3>Nama : <?php echo $mahasiswa[0]->namaMhs?></h3>
       </div>
       </div>
+      <form class="form-group">
       <div class="container-fluid">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
@@ -83,19 +84,19 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="date" class="form-control" name="">
+          <input type="text" class="form-control" name="tglLahirMhs" id="tglLahirMhs" placeholder="Tanggal lahir">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Kota Lahir">
+          <input type="text" class="form-control" name="kotaLahirMhs" placeholder="Kota Lahir">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="NIK">
+          <input type="text" class="form-control" name="NIKMhs" id="NIKMhs" placeholder="NIK">
         </div>
       </div>
       <p>
@@ -103,7 +104,7 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <select class="form-control">
+          <select class="form-control" name="agamaMhs" id="agamaMhs">
             <option>Agama</option>
             <option>Islam</option>
           </select>
@@ -112,7 +113,7 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <select class="form-control">
+          <select class="form-control" name="jkMhs" id="jkMhs">
             <option>Jenis Kelamin</option>
             <option>Laki-laki</option>
             <option>Perempuan</option>
@@ -121,12 +122,12 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="No Hp">
+          <input type="text" class="form-control" name="noHpMhs" id="noHpMhs" placeholder="No Hp">
         </div>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Email">
+          <input type="text" class="form-control" name="emailMhs" id="emailMhs" placeholder="Email">
         </div>
       </div>
       </p>
@@ -140,48 +141,38 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Nama Sekolah">
+          <input type="text" class="form-control" name="namaSkl" id="namaSkl" placeholder="Nama Sekolah">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Jurusan">
+          <input type="text" class="form-control" name="jurusanSkl" id="jurusanSkl" placeholder="Jurusan">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="NISN">
-        </div>
-        <div class="form-group">
-          <label>&nbsp;</label>
-          <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="Nilai UN">
+          <input type="number" class="form-control" name="nisnSkl" id="nisnSkl" placeholder="NISN">
         </div>
       </div>
       <p>
       <div class="form-inline col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+        <div class="form-group">
+          <label>&nbsp;</label>
+          <label>&nbsp;</label>
+          <input type="number" class="form-control" name="nilaiUNSkl" id="nilaiUNSkl" placeholder="Nilai UN">
+        </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="Jumlah Mata Pelajaran">
+          <input type="number" class="form-control" name="jmlhMPSkl" id="jmlhMPSkl" placeholder="Jumlah Mata Pelajaran">
         </div>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Kota">
-        </div>
-        <div class="form-group">
-          <label>&nbsp;</label>
-          <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Provinsi">
-        </div>
-        <div class="form-group">
-          <label>&nbsp;</label>
-          <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="Kode Pos">
+          <input type="number" class="form-control" name="rtUNSkl" id="rtUNSkl" placeholder="Rata-rata Nilai UN">
         </div>
       </div>
       </p>
@@ -195,24 +186,24 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Nama Ayah Kandung">
+          <input type="text" class="form-control" name="namaAyah" id="namaAyah" placeholder="Nama Ayah Kandung">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="NIK Ayah Kandung">
+          <input type="number" class="form-control" name="nikAyah" id="nikAyah" placeholder="NIK Ayah Kandung">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="Nama Ibu Kandung">
+          <input type="text" class="form-control" name="namaIbu" id="namaIbu" placeholder="Nama Ibu Kandung">
         </div>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="NIK Ibu Kandung">
+          <input type="number" class="form-control" name="nikIbu" id="nikIbu" placeholder="NIK Ibu Kandung">
         </div>
       </div>
       <p>
@@ -227,24 +218,24 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Alamat">
+          <input type="text" class="form-control" name="alamatDms" id="alamatDms" placeholder="Alamat">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="RT">
+          <input type="number" class="form-control" name="rtDms" id="rtDms" placeholder="RT">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="RW">
+          <input type="number" class="form-control" name="rwDms" id="rwDms" placeholder="RW">
         </div>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Kelurahan">
+          <input type="text" class="form-control" name="kelDms" id="kelDms" placeholder="Kelurahan">
         </div>
       </div>
       <p>
@@ -253,28 +244,30 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Kecamatan">
+          <input type="text" class="form-control" name="kecDms" id="kecDms" placeholder="Kecamatan">
         </div>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Kota">
+          <input type="text" class="form-control" name="kotaDms" id="kotaDms" placeholder="Kota">
         </div>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Provinsi">
+          <input type="text" class="form-control" name="provDms" id="provDms" placeholder="Provinsi">
         </div>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="Kode Pos">
+          <input type="number" class="form-control" name="kpDms" id="kpDms" placeholder="Kode Pos">
         </div>
       </div>
+      <input type="hidden" class="form-control" name="fkNimMhs" value="<?php echo $nimMhs ?>">
       </p>
       <div class="container-fluid">
       <button class="btn btn-primary">Simpan</button>
       </div>
+      </form>
       <br>
     </div>
     </div>
