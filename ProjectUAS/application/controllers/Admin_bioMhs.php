@@ -3,6 +3,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_bioMhs extends CI_Controller {
 
+		public function byID($nimMhs)
+	{
+		$this->load->helper('url');
+		$data['nimMhs'] = $nimMhs;
+		$this->load->model('mahasiswa_model');
+		$data['mahasiswa'] = $this->mahasiswa_model->getMahasiswa($nimMhs);
+		$this->load->model('biodata_model');
+		$data['biodata'] = $this->biodata_model->getbiodataByIdMhs($nimMhs);
+		$this->load->model('sekolah_model');
+		$data['sekolah'] = $this->sekolah_model->getbiodataByIdMhs($nimMhs);
+		$this->load->model('keluarga_model');
+		$data['keluarga'] = $this->keluarga_model->getbiodataByIdMhs($nimMhs);
+		$this->load->model('domisili_model');
+		$data['domisili'] = $this->domisili_model->getbiodataByIdMhs($nimMhs);
+		$this->load->view('updateMhs_admin', $data);
+	}
+
 	public function insertBio_MhsByNIM($nimMhs)
 	{
 		$data['nimMhs'] = $nimMhs;
@@ -55,7 +72,7 @@ class Admin_bioMhs extends CI_Controller {
 
 	}
 
-	public function update($nimMhs, $idBio, $idSkl, $idKlg, $idDms)
+	public function updateBio_MhsByNIM($nimMhs, $idBio, $idSkl, $idKlg, $idDms)
 	{
 		# code...
 		$data['nimMhs'] = $nimMhs;

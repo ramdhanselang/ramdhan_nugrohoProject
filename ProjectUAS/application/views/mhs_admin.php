@@ -90,7 +90,7 @@
               <td><?php echo $value['namaMhs'] ?></td>
               <td><center>
                 <a href="<?php echo base_url("index.php/Admin_bioMhs/insertBio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Insert</a>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/updateBio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-success">Update</a>
+                <a href="<?php echo base_url("index.php/Admin_bioMhs/byID/".$value['nimMhs']) ?>" class="btn btn-sm btn-success">Update</a>
                 <a href="<?php echo base_url("index.php/Admin_bioMhs/readBio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-danger">Read</a>
               </center>
               </td>

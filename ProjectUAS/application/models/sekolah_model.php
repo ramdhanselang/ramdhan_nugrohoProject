@@ -18,6 +18,12 @@
 			return $query->result_array();
 		}
 
+				public function getbiodataByIdMhs($id)
+		{
+			$query = $this->db->query("select * from sekolah where fkNimMhs='$id'");
+			return $query->result_array();
+		}
+
 		public function insertDataSekolah()
 		{
 			$object = array(
@@ -27,7 +33,7 @@
 				'nilaiUNSkl' => $this->input->post('nilaiUNSkl'),
 				'jmlhMPSkl' => $this->input->post('jmlhMPSkl'),
 				'rtUNSkl' => $this->input->post('rtUNSkl'),
-				'fkNimMhs' => $this->input->post('fkNimMhs')
+				'fkNimMhs' => $this->input->post('fk_nimMhs')
 				);
 			$this->db->insert('sekolah', $object);
 		}

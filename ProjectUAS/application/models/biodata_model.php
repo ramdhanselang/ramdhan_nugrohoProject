@@ -23,21 +23,26 @@
 			return $query->result_array();
 		}
 
+		public function getbiodataByIdMhs($id)
+		{
+			$query = $this->db->query("select * from biodata where fkNimMhs='$id'");
+			return $query->result();
+		}
+
 		public function insertDataBiodata()
 		{
-			$tglLahirRow = $this->input->post('tglLahir');
-			$tglLahirExplode = explode("-", $tglLahirRow);
-			$tglFix = $tglLahirExplode[2]."-".$tglLahirExplode[1]."-".$tglLahirExplode[0];
+			$tgl=$this->input->post('tglLahirMhs');
+			$tglFix=date_format(new DateTime($tgl),"Y-m-d");
 
 			$object = array( 
 				'tglLahirMhs' => $tglFix,
 				'kotaLahirMhs' => $this->input->post('kotaLahirMhs'),
-				'NIKMhs' => $this->input->post('nikMhs'),
+				'NIKMhs' => $this->input->post('NIKMhs'),
 				'agamaMhs' => $this->input->post('agamaMhs'),
 				'jkMhs' => $this->input->post('jkMhs'),
 				'nohpMhs' => $this->input->post('noHpMhs'),
 				'emailMhs' => $this->input->post('emailMhs'),
-				'fkNimMhs' => $this->input->post('fkNimMhs')
+				'fkNimMhs' => $this->input->post('fk_nimMhs')
 				);
 			$this->db->insert('biodata', $object);
 		}
