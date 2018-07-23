@@ -73,7 +73,6 @@
       <h3>Nama : <?php echo $mahasiswa[0]->namaMhs?></h3>
       </div>
       </div>
-      <?php echo form_open('Admin_bioMhs/updateBio_MhsByNIM/'.$nimMhs); ?>
       <form class="form-group">
       <div class="container-fluid">
       <!-- Breadcrumbs-->
@@ -268,9 +267,6 @@
         </div>
       </div>
       </p>
-      <div class="container-fluid">
-      <button class="btn btn-primary">Simpan</button>
-      <?php echo form_close(); ?>
       </div>
       </form>
       <br>

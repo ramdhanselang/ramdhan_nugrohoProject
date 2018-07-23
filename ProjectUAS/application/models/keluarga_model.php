@@ -15,7 +15,7 @@
 		public function getDataKeluarga()
 		{
 			$query = $this->db->get("keluarga");
-			return $query->result_array();
+			return $query->result();
 		}
 
 				public function getkeluargaByIdMhs($id)

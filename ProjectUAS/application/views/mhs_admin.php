@@ -86,12 +86,13 @@
         <tbody>
           <?php foreach ($mahasiswa_list as $key => $value): ?>
             <tr>
-              <td><?php echo $value['nimMhs'] ?></td>
-              <td><?php echo $value['namaMhs'] ?></td>
+              <td><?php echo $value->nimMhs ?></td>
+              <td><?php echo $value->namaMhs ?></td>
               <td><center>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/insertBio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-info">Insert</a>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/updateBio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-success">Update</a>
-                <a href="<?php echo base_url("index.php/Admin_bioMhs/readBio_MhsByNIM/".$value['nimMhs']) ?>" class="btn btn-sm btn-danger">Read</a>
+                <a href="<?php echo base_url("index.php/Admin_bioMhs/insertBio_MhsByNIM/".$value->nimMhs) ?>" class="btn btn-sm btn-info">Insert</a>
+                <a href="<?php echo base_url("index.php/Admin_bioMhs/updateBio_MhsByNIM/".$value->nimMhs) ?>" class="btn btn-sm btn-success">Update</a>
+                <a href="<?php echo base_url("index.php/Admin_bioMhs/read/".$value->nimMhs) ?>" class="btn btn-sm btn-warning">Read</a>
+                <a href="<?php echo base_url("index.php/Admin_bioMhs/delete/".$value->nimMhs) ?>" class="btn btn-sm btn-danger  ">delete</a>                
               </center>
               </td>
             </tr>

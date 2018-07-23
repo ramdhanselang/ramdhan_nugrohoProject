@@ -11,8 +11,8 @@
 
 	public function getDataMahasiswa()
 	{
-		$query = $this->db->get("mahasiswa");
-		return $query->result_array();
+		$query = $this->db->query("select * from mahasiswa");
+		return $query->result();
 	}
 
 	public function insertMahasiswa()
