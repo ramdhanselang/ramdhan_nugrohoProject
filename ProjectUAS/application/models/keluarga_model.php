@@ -18,10 +18,10 @@
 			return $query->result_array();
 		}
 
-				public function getbiodataByIdMhs($id)
+				public function getkeluargaByIdMhs($id)
 		{
 			$query = $this->db->query("select * from keluarga where fkNimMhs='$id'");
-			return $query->result_array();
+			return $query->result();
 		}
 
 		public function insertDataKeluarga()
@@ -36,13 +36,13 @@
 			$this->db->insert('keluarga', $object);
 		}
 
-		public function getKeluarga($idKlg) {
-			$this->db->where('idKlg',$idKlg);
+		public function getKeluarga($nimMhs) {
+			$this->db->where('fkNimMhs',$nimMhs);
 			$query = $this->db->get('keluarga');
 			return $query->result();
 		}
 
-		public function updateDataKeluarga($idKlg)
+		public function updateDataKeluarga($nimMhs)
 		{
 			$object = array(
 				'namaAyah' => $this->input->post('namaAyah'), 
@@ -50,7 +50,7 @@
 				'namaIbu' => $this->input->post('namaIbu'),
 				'nikIbu' => $this->input->post('nikIbu')
 				);
-			$this->db->where('idKlg', $idKlg);
+			$this->db->where('fkNimMhs', $nimMhs);
 			$this->db->update('keluarga', $object);
 		}
 

@@ -18,10 +18,10 @@
 			return $query->result_array();
 		}
 
-				public function getbiodataByIdMhs($id)
+				public function getdomisiliByIdMhs($id)
 		{
 			$query = $this->db->query("select * from domisili where fkNimMhs='$id'");
-			return $query->result_array();
+			return $query->result();
 		}
 
 		public function insertDataDomisili()
@@ -40,13 +40,13 @@
 			$this->db->insert('domisili', $object);
 		}
 
-		public function getDomisili($idDms) {
-			$this->db->where('idDms',$idDms);
+		public function getDomisili($nimMhs) {
+			$this->db->where('fkNimMhs',$nimMhs);
 			$query = $this->db->get('domisili');
 			return $query->result();
 		}
 
-		public function updateDataDomisili($idDms)
+		public function updateDataDomisili($nimMhs)
 		{
 			$object = array(
 				'alamatDms' => $this->input->post('alamatDms'), 
@@ -58,7 +58,7 @@
 				'provDms' => $this->input->post('provDms'),
 				'kpDms' => $this->input->post('kpDms'),
 				);
-			$this->db->where('idDms', $idDms);
+			$this->db->where('fkNimMhs', $nimMhs);
 			$this->db->update('domisili', $object);
 		}
 

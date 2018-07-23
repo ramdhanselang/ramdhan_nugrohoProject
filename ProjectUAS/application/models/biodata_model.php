@@ -47,30 +47,29 @@
 			$this->db->insert('biodata', $object);
 		}
 
-		public function getBiodata($idBio) 
+		public function getBiodata($nimMhs) 
 		{
-			$this->db->where('idBio',$idBio);
+			$this->db->where('fkNimMhs',$nimMhs);
 			$query = $this->db->get('biodata');
 			return $query->result_array();
 		}
 
-		public function updateDataBiodata($idBio)
+		public function updateDataBiodata($nimMhs)
 		{
-			$tglLahirRow = $this->input->post('tglLahir');
-			$tglLahirExplode = explode("-", $tglLahirRow);
-			$tglFix = $tglLahirExplode[2]."-".$tglLahirExplode[1]."-".$tglLahirExplode[0];
+			$tgl=$this->input->post('tglLahirMhs');
+			$tglFix=date_format(new DateTime($tgl),"Y-m-d");
 
 			$object = array(
 				'tglLahirMhs' => $tglFix,
 				'kotaLahirMhs' => $this->input->post('kotaLahirMhs'),
-				'NIKMhs' => $this->input->post('nikMhs'),
+				'NIKMhs' => $this->input->post('NIKMhs'),
 				'agamaMhs' => $this->input->post('agamaMhs'),
 				'jkMhs' => $this->input->post('jkMhs'),
 				'nohpMhs' => $this->input->post('nohpMhs'),
 				'emailMhs' => $this->input->post('emailMhs')
 				);
-			$this->db->where('idBio',$idBio);
-			$this->db->update('idBio', $object);
+			$this->db->where('fkNimMhs',$nimMhs);
+			$this->db->update('biodata', $object);
 		}
 
 		public function deleteDataBiodata($idBio) 

@@ -12,11 +12,11 @@ class Admin_bioMhs extends CI_Controller {
 		$this->load->model('biodata_model');
 		$data['biodata'] = $this->biodata_model->getbiodataByIdMhs($nimMhs);
 		$this->load->model('sekolah_model');
-		$data['sekolah'] = $this->sekolah_model->getbiodataByIdMhs($nimMhs);
+		$data['sekolah'] = $this->sekolah_model->getsekolahByIdMhs($nimMhs);
 		$this->load->model('keluarga_model');
-		$data['keluarga'] = $this->keluarga_model->getbiodataByIdMhs($nimMhs);
+		$data['keluarga'] = $this->keluarga_model->getkeluargaByIdMhs($nimMhs);
 		$this->load->model('domisili_model');
-		$data['domisili'] = $this->domisili_model->getbiodataByIdMhs($nimMhs);
+		$data['domisili'] = $this->domisili_model->getdomisiliByIdMhs($nimMhs);
 		$this->load->view('updateMhs_admin', $data);
 	}
 
@@ -72,10 +72,11 @@ class Admin_bioMhs extends CI_Controller {
 
 	}
 
-	public function updateBio_MhsByNIM($nimMhs, $idBio, $idSkl, $idKlg, $idDms)
+	public function updateBio_MhsByNIM($nimMhs)
 	{
 		# code...
-		$data['nimMhs'] = $nimMhs;
+		$this->load->model('mahasiswa_model');
+		$data['mahasiswa'] = $this->mahasiswa_model->getMahasiswa($nimMhs);
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('tglLahirMhs', 'tglLahirMhs', 'trim|required');
@@ -86,8 +87,8 @@ class Admin_bioMhs extends CI_Controller {
 		$this->form_validation->set_rules('noHpMhs', 'noHpMhs', 'trim|required');
 		$this->form_validation->set_rules('emailMhs', 'emailMhs', 'trim|required');
 		$this->load->model('biodata_model');
-		$data['idBio'] = $idBio;
-		$data['biodata'] = $this->biodata_model->getBiodata($idBio);
+		$data['nimMhs'] = $nimMhs;
+		$data['biodata'] = $this->biodata_model->getBiodata($nimMhs);
 
 		$this->form_validation->set_rules('namaSkl', 'namaSkl', 'trim|required');
 		$this->form_validation->set_rules('jurusanSkl', 'jurusanSkl', 'trim|required');
@@ -96,16 +97,16 @@ class Admin_bioMhs extends CI_Controller {
 		$this->form_validation->set_rules('jmlhMPSkl', 'jmlhMPSkl', 'trim|required');
 		$this->form_validation->set_rules('rtUNSkl', 'rtUNSkl', 'trim|required');
 		$this->load->model('sekolah_model');
-		$data['idSkl'] = $idSkl;
-		$data['sekolah'] = $this->sekolah_model->getSekolah($idSkl);
+		$data['nimMhs'] = $nimMhs;
+		$data['sekolah'] = $this->sekolah_model->getSekolah($nimMhs);
 
 		$this->form_validation->set_rules('namaAyah', 'namaAyah', 'trim|required');
 		$this->form_validation->set_rules('nikAyah', 'nikAyah', 'trim|required');
 		$this->form_validation->set_rules('namaIbu', 'nikIbu', 'trim|required');
 		$this->form_validation->set_rules('nikIbu', 'nikIbu', 'trim|required');
 		$this->load->model('keluarga_model');
-		$data['idKlg'] = $idKlg;
-		$data['keluarga'] = $this->keluarga_model->getKeluarga($idKlg);
+		$data['nimMhs'] = $nimMhs;
+		$$data['keluarga'] = $this->keluarga_model->getKeluarga($nimMhs);
 
 		$this->form_validation->set_rules('alamatDms', 'alamatDms', 'trim|required');
 		$this->form_validation->set_rules('rtDms', 'rtDms', 'trim|required');
@@ -116,16 +117,16 @@ class Admin_bioMhs extends CI_Controller {
 		$this->form_validation->set_rules('provDms', 'provDms', 'trim|required');
 		$this->form_validation->set_rules('kpDms', 'kpDms', 'trim|required');
 		$this->load->model('domisili_model');
-		$data['idDms'] = $idDms;
-		$data['domisili'] = $this->domisili_model->getDomisili($idDms);
+		$data['nimMhs'] = $nimMhs;
+		$data['domisili'] = $this->domisili_model->getDomisili($nimMhs);
 		if ($this->form_validation->run()==FALSE) {
 			# code...
-			$this->load->view('bioMhs_admin', $data);
+			$this->load->view('updateMhs_admin', $data);
 		}else{
-			$this->biodata_model->updateDataBiodata($idBio);
-			$this->sekolah_model->updateDataSekolah($idSkl);
-			$this->keluarga_model->updateDataKeluarga($idKlg);
-			$this->domisili_model->updateDataDomisili($idDms);
+			$this->biodata_model->updateDataBiodata($nimMhs);
+			$this->sekolah_model->updateDataSekolah($nimMhs);
+			$this->keluarga_model->updateDataKeluarga($nimMhs);
+			$this->domisili_model->updateDataDomisili($nimMhs);
 			redirect('Admin_Mhs','refresh');
 		};
 

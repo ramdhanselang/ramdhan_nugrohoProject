@@ -69,9 +69,12 @@
       <center><h1>BIODATA MAHASISWA</h1></center><br>
       <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
       <div class="container-fluid">
-      <h3 style="font-family: 'Open Sans', sans-seri; color: #25993C" ><?php echo $sekolah['namaSkl'] ?> / <?php echo $mahasiswa[0]->namaMhs?></h3>
+      <h3>NIM : <?php echo $mahasiswa[0]->nimMhs ?></h3>
+      <h3>Nama : <?php echo $mahasiswa[0]->namaMhs?></h3>
       </div>
       </div>
+      <?php echo form_open('Admin_bioMhs/udateBio_MhsByNIM/'.$nimMhs); ?>
+      <form class="form-group">
       <div class="container-fluid">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
@@ -82,19 +85,19 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="date" class="form-control" name="" >
+          <input type="date" class="form-control" name="tglLahirMhs" id="tglLahirMhs" value="<?php echo $biodata[0]->tglLahirMhs ?>" placeholder="Tanggal lahir">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="tglLahirMhs" placeholder="Kota Lahir" >
+          <input type="text" class="form-control" name="kotaLahirMhs" value="<?php echo $biodata[0]->kotaLahirMhs ?>" placeholder="Kota Lahir">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="NIK">
+          <input type="text" class="form-control" name="NIKMhs" id="NIKMhs" value="<?php echo $biodata[0]->NIKMhs ?>" placeholder="NIK">
         </div>
       </div>
       <p>
@@ -102,7 +105,7 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <select class="form-control">
+          <select class="form-control" name="agamaMhs" id="agamaMhs" value="<?php echo $biodata[0]->agamaMhs ?>">
             <option>Agama</option>
             <option>Islam</option>
           </select>
@@ -111,7 +114,7 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <select class="form-control">
+          <select class="form-control" name="jkMhs" id="jkMhs" value="<?php echo $biodata[0]->jkMhs ?>">
             <option>Jenis Kelamin</option>
             <option>Laki-laki</option>
             <option>Perempuan</option>
@@ -120,12 +123,13 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="No Hp">
+          <input type="text" class="form-control" name="noHpMhs" id="noHpMhs" value="<?php echo $biodata[0]->nohpMhs ?>" placeholder="No Hp">
         </div>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Email">
+          <input type="text" class="form-control" name="emailMhs" id="emailMhs" value="<?php echo $biodata[0]->emailMhs ?>" placeholder="Email">
+          <input type="hidden" class="form-control" name="fk_nimMhs" value="<?php echo $biodata[0]->fkNimMhs ?>">
         </div>
       </div>
       </p>
@@ -139,48 +143,39 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Nama Sekolah">
+          <input type="text" class="form-control" name="namaSkl" id="namaSkl" value="<?php echo $sekolah[0]->namaSkl ?>"placeholder="Nama Sekolah">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Jurusan">
+          <input type="text" class="form-control" name="jurusanSkl" id="jurusanSkl" value="<?php echo $sekolah[0]->jurusanSkl ?>" placeholder="Jurusan">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="NISN">
-        </div>
-        <div class="form-group">
-          <label>&nbsp;</label>
-          <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="Nilai UN">
+          <input type="number" class="form-control" name="nisnSkl" id="nisnSkl" value="<?php echo $sekolah[0]->nisnSkl ?>" placeholder="NISN">
         </div>
       </div>
       <p>
       <div class="form-inline col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+        <div class="form-group">
+          <label>&nbsp;</label>
+          <label>&nbsp;</label>
+          <input type="number" class="form-control" name="nilaiUNSkl" id="nilaiUNSkl" value="<?php echo $sekolah[0]->nilaiUNskl ?>" placeholder="Nilai UN">
+        </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="Jumlah Mata Pelajaran">
+          <input type="number" class="form-control" name="jmlhMPSkl" id="jmlhMPSkl" value="<?php echo $sekolah[0]->jmlhMPSkl ?>" placeholder="Jumlah Mata Pelajaran">
         </div>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Kota">
-        </div>
-        <div class="form-group">
-          <label>&nbsp;</label>
-          <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Provinsi">
-        </div>
-        <div class="form-group">
-          <label>&nbsp;</label>
-          <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="Kode Pos">
+          <input type="number" class="form-control" name="rtUNSkl" id="rtUNSkl" value="<?php echo $sekolah[0]->rtUNSkl ?>" placeholder="Rata-rata Nilai UN">
+          <input type="hidden" class="form-control" name="fk_nimMhs" value="<?php echo $sekolah[0]->fkNimMhs ?>">
         </div>
       </div>
       </p>
@@ -194,24 +189,25 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Nama Ayah Kandung">
+          <input type="text" class="form-control" name="namaAyah" id="namaAyah" value="<?php echo $keluarga[0]->namaAyah ?>" placeholder="Nama Ayah Kandung">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="NIK Ayah Kandung">
+          <input type="number" class="form-control" name="nikAyah" id="nikAyah" value="<?php echo $keluarga[0]->nikAyah ?>" placeholder="NIK Ayah Kandung">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="Nama Ibu Kandung">
+          <input type="text" class="form-control" name="namaIbu" id="namaIbu" value="<?php echo $keluarga[0]->namaIbu ?>" placeholder="Nama Ibu Kandung">
         </div>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="NIK Ibu Kandung">
+          <input type="number" class="form-control" name="nikIbu" id="nikIbu" value="<?php echo $keluarga[0]->nikIbu ?>" placeholder="NIK Ibu Kandung">
+          <input type="hidden" class="form-control" name="fk_nimMhs" value="<?php echo $keluarga[0]->fkNimMhs ?>">
         </div>
       </div>
       <p>
@@ -226,24 +222,25 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Alamat">
+          <input type="text" class="form-control" name="alamatDms" id="alamatDms" value="<?php echo $domisili[0]->alamatDms ?>" placeholder="Alamat">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="RT">
+          <input type="number" class="form-control" name="rtDms" id="rtDms" value="<?php echo $domisili[0]->rtDms ?>" placeholder="RT">
         </div>
         <label>&nbsp;</label>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="RW">
+          <input type="number" class="form-control" name="rwDms" id="rwDms" value="<?php echo $domisili[0]->rwDms ?>" placeholder="RW">
         </div>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Kelurahan">
+          <input type="text" class="form-control" name="kelDms" id="kelDms" value="<?php echo $domisili[0]->kelDms ?>" placeholder="Kelurahan">
+          <input type="hidden" class="form-control" name="fk_nimMhs" value="<?php echo $domisili[0]->fkNimMhs ?>">
         </div>
       </div>
       <p>
@@ -252,28 +249,30 @@
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Kecamatan">
+          <input type="text" class="form-control" name="kecDms" id="kecDms" value="<?php echo $domisili[0]->kecDms ?>" placeholder="Kecamatan">
         </div>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Kota">
+          <input type="text" class="form-control" name="kotaDms" id="kotaDms" value="<?php echo $domisili[0]->kotaDms ?>" placeholder="Kota">
         </div>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="text" class="form-control" name="" placeholder="Provinsi">
+          <input type="text" class="form-control" name="provDms" id="provDms" value="<?php echo $domisili[0]->provDms ?>" placeholder="Provinsi">
         </div>
         <div class="form-group">
           <label>&nbsp;</label>
           <label>&nbsp;</label>
-          <input type="number" class="form-control" name="" placeholder="Kode Pos">
+          <input type="number" class="form-control" name="kpDms" id="kpDms" value="<?php echo $domisili[0]->kpDms ?>" placeholder="Kode Pos">
         </div>
       </div>
       </p>
       <div class="container-fluid">
       <button class="btn btn-primary">Simpan</button>
+      <?php echo form_close(); ?>
       </div>
+      </form>
       <br>
     </div>
     </div>

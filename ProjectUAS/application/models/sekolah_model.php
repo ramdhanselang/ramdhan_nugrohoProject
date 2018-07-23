@@ -18,10 +18,10 @@
 			return $query->result_array();
 		}
 
-				public function getbiodataByIdMhs($id)
+		public function getsekolahByIdMhs($id)
 		{
 			$query = $this->db->query("select * from sekolah where fkNimMhs='$id'");
-			return $query->result_array();
+			return $query->result();
 		}
 
 		public function insertDataSekolah()
@@ -38,13 +38,13 @@
 			$this->db->insert('sekolah', $object);
 		}
 
-		public function getSekolah($idSkl) {
-			$this->db->where('idSkl',$idSkl);
+		public function getSekolah($nimMhs) {
+			$this->db->where('fkNimMhs',$nimMhs);
 			$query = $this->db->get('sekolah');
 			return $query->result();
 		}
 
-		public function updateDataSekolah($idSkl)
+		public function updateDataSekolah($nimMhs)
 		{
 			$object = array(
 				'namaSkl' => $this->input->post('namaSkl'), 
@@ -54,7 +54,7 @@
 				'jmlhMPSkl' => $this->input->post('jmlhMPSkl'),
 				'rtUNSkl' => $this->input->post('rtUNSkl')
 				);
-			$this->db->where('idSkl',$idSkl);
+			$this->db->where('fkNimMhs',$nimMhs);
 			$this->db->update('sekolah', $object);
 		}
 
